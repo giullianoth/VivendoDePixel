@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+@font-face {
+    font-family: "Retro Gaming";
+    src: url("../fonts/Retro-Gaming/Retro-Gaming.ttf") format("truetype");
+}
+
+:root {
+    --font-text: "Play", sans-serif;
+    --font-title: "Retro Gaming", monospace;
+ 
+    --color-background: #201533;
+    --color-black: #000;
+    --color-white: #FFF;
+    --color-light-gray: #8B8B8B;
+    --color-lighter-gray: #C1C1C1;
+    --color-blue-shadow-text: #639BFF;
+    --color-blue-deep-sea: #3898FF;
+    --color-blue-deep-sea-shadow: #1162B9;
+    --color-yellow-detach: #FBF236;
+    --color-pink-button: #F1A8AE;
+    --color-pink-shadow-button: #BA697B;
+    --color-green-button: #66C5DD;
+    --color-green-shadow-button: #4D95A6;
+
+    --container-width: 1140px;
+    --container-clearance: 20px;
+}
+
+/* BASIC CONFIG */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: var(--font-text);
+    color: var(--color-white);
+    background-color: var(--color-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+}
+
+input, button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input {
+    padding: 10px;
+    background-color: var(--color-white);
+    border: 0 solid var(--color-light-gray);
+    border-left-width: 4px;
+    border-bottom-width: 4px;
+}
+
+input::placeholder {
+    color: var(--color-lighter-gray);
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--container-clearance);
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--color-blue-deep-sea);
+    border: 0 solid var(--color-blue-deep-sea-shadow);
+    border-left-width: 4px;
+    border-bottom-width: 4px;
+    color: var(--color-white);
+    padding: 10px 36px;
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--color-pink-button);
+    border-color: var(--color-pink-shadow-button);
+    transform: scale(1.1);
+}
+
+.embed {
+    max-width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.embed > * {
+    width: 100%;
+    height: 100%;
+}
+
+/* HERO SECTION */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/Group-152-5.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    mix-blend-mode: lighten;
+}
+
+.hero__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 40px;
+}
+
+.hero__info {
+    flex-basis: 100%;
+}
+
+.hero__title h1 {
+    display: none;
+}
+
+.hero__title img {
+    width: 200px;
+}
+
+.hero__headline {
+    margin-bottom: 20px;
+    font-family: var(--font-title);
+    font-size: 1.6em;
+    line-height: 1.1em;
+    text-shadow: 1px 1px 0 var(--color-blue-shadow-text);
+}
+
+.hero__headline span {
+    color: var(--color-pink-button);
+    text-shadow: 1px 1px 0 var(--color-white);
+}
+
+.hero__text {
+    margin-bottom: 20px;
+}
+
+.hero_subscribe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.hero_subscribe input {
+    flex-basis: 100%;
+}
+
+.hero_subscribe .button {
+    flex-basis: 100%;
+}
+
+.hero__video {
+    flex-basis: 100%;
+    min-height: 300px;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.hero__video-frame {
+    position: relative;
+}
+
+.hero__video-frame img {
+    pointer-events: none;
+}
+
+.hero__video-embed {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 96%;
+    height: 82%;
+}
+
+/* RESPONSIVE DESIGN */
+/* Breakpoint Medium */
+@media screen and (min-width: 768px) {
+    .hero_subscribe {
+        flex-wrap: nowrap;
+    }
+
+    .hero_subscribe input {
+        flex-basis: 70%;
+    }
+
+    .hero_subscribe .button {
+        flex-basis: 30%;
+    }
+}
+
+/* Breakpoint Large */
+@media screen and (min-width: 992px) {
+    .hero {
+        min-height: 540px;
+    }
+
+    .hero::before {
+        background-position: bottom right;
+    }
+
+    .hero__container {
+        flex-wrap: nowrap;
+    }
+
+    .hero__info {
+        flex-basis: 45%;
+    }
+
+    .hero__video {
+        flex-basis: 400px;
+        max-width: none;
+        margin: 0;
+    }
+}
