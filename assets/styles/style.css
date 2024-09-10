@@ -83,8 +83,8 @@ input::placeholder {
 
 .button {
     display: inline-block;
-    background-color: var(--color-blue-deep-sea);
-    border: 0 solid var(--color-blue-deep-sea-shadow);
+    background-color: var(--color-lighter-gray);
+    border: 0 solid var(--color-light-gray);
     border-left-width: 4px;
     border-bottom-width: 4px;
     color: var(--color-white);
@@ -94,9 +94,17 @@ input::placeholder {
     cursor: pointer;
 }
 
-.button:hover {
+.button-blue {
+    background-color: var(--color-blue-deep-sea);
+    border-color: var(--color-blue-deep-sea-shadow);
+}
+
+.button-pink {
     background-color: var(--color-pink-button);
     border-color: var(--color-pink-shadow-button);
+}
+
+.button:hover {
     transform: scale(1.1);
 }
 
@@ -170,18 +178,23 @@ input::placeholder {
     margin-bottom: 20px;
 }
 
-.hero_subscribe {
+.hero__subscribe {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
 
-.hero_subscribe input {
+.hero__subscribe input {
     flex-basis: 100%;
 }
 
-.hero_subscribe .button {
+.hero__subscribe .button {
     flex-basis: 100%;
+}
+
+.hero__subscribe .button:hover {
+    background-color: var(--color-pink-button);
+    border-color: var(--color-pink-shadow-button);
 }
 
 .hero__video {
@@ -210,15 +223,15 @@ input::placeholder {
 /* RESPONSIVE DESIGN */
 /* Breakpoint Medium */
 @media screen and (min-width: 768px) {
-    .hero_subscribe {
+    .hero__subscribe {
         flex-wrap: nowrap;
     }
 
-    .hero_subscribe input {
+    .hero__subscribe input {
         flex-basis: 70%;
     }
 
-    .hero_subscribe .button {
+    .hero__subscribe .button {
         flex-basis: 30%;
     }
 }
