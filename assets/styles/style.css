@@ -48,6 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     text-decoration: none;
+    color: var(--color-blue-deep-sea);
 }
 
 p {
@@ -504,6 +505,16 @@ input::placeholder {
     .about__cta-title {
         font-size: 1.6em;
     }
+}
+
+/* FOOTER SECTION */
+.footer {
+    padding-block: 10px;
+}
+
+.footer__container p {
+    font-size: 0.8em;
+    text-align: center;
 }
 
 /* Breakpoint Large */
