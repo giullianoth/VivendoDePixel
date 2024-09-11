@@ -40,6 +40,7 @@ body {
     font-family: var(--font-text);
     color: var(--color-white);
     background-color: var(--color-background);
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -411,7 +412,7 @@ input::placeholder {
 
 /* ABOUT SECTION */
 .about {
-    padding-block: 50px;
+    padding-block: 50px 90px;
     background-image: url("../images/background-beneficios--e1718896528624.webp");
     background-repeat: no-repeat;
     background-position: -220px 40px;
@@ -483,6 +484,20 @@ input::placeholder {
     color: var(--color-black);
 }
 
+/* FOOTER SECTION */
+.footer {
+    padding-block: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer__container p {
+    font-size: 0.8em;
+    text-align: center;
+}
+
 /* RESPONSIVE DESIGN */
 /* Breakpoint Medium */
 @media screen and (min-width: 768px) {
@@ -505,16 +520,6 @@ input::placeholder {
     .about__cta-title {
         font-size: 1.6em;
     }
-}
-
-/* FOOTER SECTION */
-.footer {
-    padding-block: 10px;
-}
-
-.footer__container p {
-    font-size: 0.8em;
-    text-align: center;
 }
 
 /* Breakpoint Large */
