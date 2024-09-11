@@ -138,6 +138,98 @@ input::placeholder {
     margin-bottom: 20px;
 }
 
+/* HEADER / COUNTDOWN SECTION */
+.header {
+    padding-block: 10px 16px;
+    background-color: var(--color-lighter-gray);
+    color: var(--color-black);
+    border: 0 solid var(--color-white);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    box-shadow: 6px -6px 0 var(--color-light-gray) inset;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.header__title {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.header__title img {
+    width: 40px;
+    animation: hourglass-spin 3s steps(1) infinite;
+}
+
+.header__title h1 {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.header__countdown {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.header__countdown-counter {
+    background-color: var(--color-white);
+    font-family: var(--font-title);
+    text-align: center;
+    border: 0 solid var(--color-black);
+    border-top-width: 3px;
+    border-left-width: 3px;
+    padding: 6px;
+}
+
+.header__countdown-counter span {
+    display: block;
+}
+
+.header__countdown-counter .counter {
+    font-size: 1.2em;
+}
+
+.header__countdown-counter .label {
+    font-size: 0.8em;
+}
+
+@keyframes hourglass-spin {
+    0% {
+        transform: rotate(180deg);
+    }
+
+    14% {
+        transform: rotate(135deg);
+    }
+
+    28% {
+        transform: rotate(90deg);
+    }
+
+    42% {
+        transform: rotate(45deg);
+    }
+
+    56% {
+        transform: rotate(0deg);
+    }
+
+    84% {
+        transform: rotate(180deg);
+    }
+}
+
 /* HERO SECTION */
 .hero {
     min-height: 100vh;
@@ -477,6 +569,10 @@ input::placeholder {
 
     .about__cta {
         margin-top: -60px;
+    }
+
+    .header__countdown, .header__title {
+        flex-basis: unset;
     }
 }
 
