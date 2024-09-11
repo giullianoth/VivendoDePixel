@@ -24,7 +24,7 @@
     --color-green-shadow-button: #4D95A6;
     --color-text-shadow: rgba(0, 0, 0, 0.8);
 
-    --container-width: 1140px;
+    --container-width: 1200px;
     --container-clearance: 20px;
 }
 
@@ -132,6 +132,10 @@ input::placeholder {
 .embed > * {
     width: 100%;
     height: 100%;
+}
+
+.text-box > *:not(:last-child) {
+    margin-bottom: 20px;
 }
 
 /* HERO SECTION */
@@ -249,19 +253,20 @@ input::placeholder {
 }
 
 .description .bubbles .bubble-1 {
+    top: 20px;
     left: 30px;
-    width: 70px;
-}
-
-.description .bubbles .bubble-2 {
-    left: 120px;
-    top: 120px;
     width: 50px;
 }
 
+.description .bubbles .bubble-2 {
+    left: 90px;
+    top: 60px;
+    width: 40px;
+}
+
 .description .bubbles .bubble-3 {
-    bottom: 6%;
-    right: 7%;
+    bottom: 60px;
+    right: 40px;
     width: 50px;
 }
 
@@ -273,7 +278,7 @@ input::placeholder {
 }
 
 .description__row:first-child {
-    margin-bottom: 50px;
+    margin-block: 80px 50px;
 }
 
 .description__image {
@@ -311,6 +316,80 @@ input::placeholder {
     text-shadow: 0 0 8px var(--color-text-shadow);
 }
 
+/* ABOUT SECTION */
+.about {
+    padding-block: 50px;
+    background-image: url("../images/background-beneficios--e1718896528624.webp");
+    background-repeat: no-repeat;
+    background-position: -220px 40px;
+    background-size: cover;
+}
+
+.about__content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.about__image {
+    flex-basis: 100%;
+}
+
+.about__image-wrapper {
+    margin: auto;
+    width: fit-content;
+}
+
+.about__image .logo {
+    width: 140px;
+    margin-left: 20px;
+}
+
+.about__image .character {
+    height: 420px;
+    margin-top: -160px;
+}
+
+.about__info {
+    flex-basis: 100%;
+}
+
+.about__info-title {
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+.about__cta {
+    background-image: url("../images/Mask-group-7-e1718897337710.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+}
+
+.about__cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+    min-height: 558px;
+    max-width: 600px;
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+.about__cta-title {
+    color: var(--color-pink-button);
+    text-shadow: -2px 2px 0 var(--color-black);
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.5px var(--color-black);
+}
+
+.about__cta-text {
+    color: var(--color-black);
+}
+
 /* RESPONSIVE DESIGN */
 /* Breakpoint Medium */
 @media screen and (min-width: 768px) {
@@ -324,6 +403,14 @@ input::placeholder {
 
     .hero__subscribe .button {
         flex-basis: 30%;
+    }
+
+    .about {
+        background-position-x: -120px;
+    }
+
+    .about__cta-title {
+        font-size: 1.6em;
     }
 }
 
@@ -351,6 +438,22 @@ input::placeholder {
         margin: 0;
     }
 
+    .description .bubbles .bubble-1 {
+        width: 70px;
+        top: 60px;
+    }
+
+    .description .bubbles .bubble-2 {
+        left: 120px;
+        top: 120px;
+        width: 50px;
+    }
+
+    .description__row:first-child {
+        flex-direction: row-reverse;
+        margin-block-start: 0;
+    }
+
     .description__image {
         flex-basis: 50%;
     }
@@ -364,7 +467,23 @@ input::placeholder {
         max-width: none;
     }
 
-    .description__row:first-child {
-        flex-direction: row-reverse;
+    .about__image {
+        flex-basis: 50%;
+    }
+
+    .about__info {
+        flex-basis: 50%;
+    }
+
+    .about__cta {
+        margin-top: -60px;
+    }
+}
+
+/* Breakpoint Extra Extrs Large */
+@media screen and (min-width: 1200px) {
+    .about__cta {
+        background-size: contain;
+        margin-top: -180px;
     }
 }
