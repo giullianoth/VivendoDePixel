@@ -122,7 +122,7 @@ input::placeholder {
 }
 
 .button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .embed {
@@ -170,18 +170,20 @@ input::placeholder {
 .header__title img {
     width: 40px;
     animation: hourglass-spin 3s steps(1) infinite;
+    display: none;
 }
 
 .header__title h1 {
-    font-size: 1.2em;
+    font-size: 1em;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .header__countdown {
     flex-basis: 100%;
     display: flex;
     justify-content: center;
-    column-gap: 10px;
+    column-gap: 6px;
 }
 
 .header__countdown-counter {
@@ -192,6 +194,7 @@ input::placeholder {
     border-top-width: 3px;
     border-left-width: 3px;
     padding: 6px;
+    font-size: 0.8em;
 }
 
 .header__countdown-counter span {
@@ -208,7 +211,7 @@ input::placeholder {
 
 @keyframes hourglass-spin {
     0% {
-        transform: rotate(180deg);
+        transform: rotate(180deg) scaleX(-1);
     }
 
     14% {
@@ -228,7 +231,7 @@ input::placeholder {
     }
 
     84% {
-        transform: rotate(180deg);
+        transform: rotate(180deg) scaleX(-1);
     }
 }
 
@@ -237,6 +240,7 @@ input::placeholder {
     min-height: 100vh;
     position: relative;
     display: flex;
+    padding-bottom: 120px;
 }
 
 .hero::before {
@@ -259,7 +263,7 @@ input::placeholder {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    row-gap: 40px;
+    row-gap: 20px;
 }
 
 .hero__info {
@@ -272,6 +276,7 @@ input::placeholder {
 
 .hero__title img {
     width: 200px;
+    margin-inline: auto;
 }
 
 .hero__headline {
@@ -280,6 +285,7 @@ input::placeholder {
     font-size: 1.6em;
     line-height: 1.1em;
     text-shadow: 1px 1px 0 var(--color-blue-shadow-text);
+    text-align: center;
 }
 
 .hero__headline span {
@@ -289,25 +295,7 @@ input::placeholder {
 
 .hero__text {
     margin-bottom: 20px;
-}
-
-.hero__subscribe {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-
-.hero__subscribe input {
-    flex-basis: 100%;
-}
-
-.hero__subscribe .button {
-    flex-basis: 100%;
-}
-
-.hero__subscribe .button:hover {
-    background-color: var(--color-pink-button);
-    border-color: var(--color-pink-shadow-button);
+    text-align: center;
 }
 
 .hero__video {
@@ -329,8 +317,33 @@ input::placeholder {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 96%;
-    height: 82%;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__subscribe {
+    flex-basis: 100%;
+}
+
+.hero__subscribe form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.hero__subscribe input {
+    flex-basis: 100%;
+}
+
+.hero__subscribe .button {
+    flex-basis: 100%;
+}
+
+.hero__subscribe .button:hover {
+    background-color: var(--color-pink-button);
+    border-color: var(--color-pink-shadow-button);
 }
 
 /* DESCRIPTION SECTION */
@@ -359,7 +372,7 @@ input::placeholder {
 }
 
 .description .bubbles .bubble-3 {
-    bottom: 60px;
+    bottom: 160px;
     right: 40px;
     width: 50px;
 }
@@ -375,23 +388,21 @@ input::placeholder {
     margin-block: 80px 50px;
 }
 
-.description__image {
+.description__image-wrapper {
     flex-basis: 100%;
 }
 
-.description__image img {
+.description__image {
     width: 75%;
+    max-width: 250px;
     margin: auto;
-}
-
-.description__row:last-child img {
-    margin-bottom: -100px;
 }
 
 .description__info {
     flex-basis: 100%;
     max-width: 500px;
     margin-inline: auto;
+    text-align: center;
 }
 
 .description__info-title {
@@ -403,6 +414,10 @@ input::placeholder {
 
 .description__info-text {
     margin-bottom: 20px;
+}
+
+.description__info-cta {
+    margin-top: 20px;
 }
 
 .description__info-cta .button {
@@ -422,7 +437,7 @@ input::placeholder {
 .about__content {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 50px;
+    margin-bottom: -90px;
 }
 
 .about__image {
@@ -436,12 +451,12 @@ input::placeholder {
 
 .about__image .logo {
     width: 140px;
-    margin-left: 20px;
+    margin-left: 60px;
 }
 
 .about__image .character {
-    height: 420px;
-    margin-top: -160px;
+    height: 540px;
+    margin-top: -180px;
 }
 
 .about__info {
@@ -450,7 +465,8 @@ input::placeholder {
 
 .about__info-title {
     margin-bottom: 20px;
-    font-size: 1.4em;
+    font-size: 1.1em;
+    text-align: center;
 }
 
 .about__cta {
@@ -499,9 +515,18 @@ input::placeholder {
 }
 
 /* RESPONSIVE DESIGN */
-/* Breakpoint Medium */
-@media screen and (min-width: 768px) {
-    .hero__subscribe {
+/* Breakpoint Small */
+@media screen and (min-width: 576px) {
+    .hero__container {
+        row-gap: 40px;
+    }
+
+    .hero__video-embed {
+        width: 96%;
+        height: 82%;
+    }
+
+    .hero__subscribe form {
         flex-wrap: nowrap;
     }
 
@@ -511,6 +536,17 @@ input::placeholder {
 
     .hero__subscribe .button {
         flex-basis: 30%;
+    }
+}
+
+/* Breakpoint Medium */
+@media screen and (min-width: 768px) {
+    .header__countdown, .header__title {
+        flex-basis: unset;
+    }
+
+    .header__title img {
+        display: block;
     }
 
     .about {
@@ -524,6 +560,18 @@ input::placeholder {
 
 /* Breakpoint Large */
 @media screen and (min-width: 992px) {
+    .header__title h1 {
+        font-size: 1.2em;
+    }
+
+    .header__countdown {
+        column-gap: 10px;
+    }
+
+    .header__countdown-counter {
+        font-size: 1em;
+    }
+
     .hero {
         min-height: 540px;
     }
@@ -532,18 +580,26 @@ input::placeholder {
         background-position: bottom right;
     }
 
-    .hero__container {
-        flex-wrap: nowrap;
+    .hero__title img {
+        margin: 0;
     }
 
     .hero__info {
         flex-basis: 45%;
     }
 
+    .hero__headline, .hero__text  {
+        text-align: start;
+    }
+
     .hero__video {
         flex-basis: 400px;
         max-width: none;
         margin: 0;
+    }
+
+    .hero__subscribe {
+        flex-basis: 45%;
     }
 
     .description .bubbles .bubble-1 {
@@ -562,38 +618,48 @@ input::placeholder {
         margin-block-start: 0;
     }
 
-    .description__image {
+    .description__image-wrapper {
         flex-basis: 50%;
     }
 
+    .description__image {
+        max-width: none;
+    }
+
     .description__row:last-child img {
-        margin-bottom: -120px;
+        margin-bottom: -100px;
     }
 
     .description__info {
         flex-basis: 50%;
         max-width: none;
+        text-align: start;
     }
 
-    .about__image {
+    .about__content {
+        flex-direction: row-reverse;
+    }
+
+    .about__image, .about__info {
         flex-basis: 50%;
     }
 
-    .about__info {
-        flex-basis: 50%;
+    .about__info-title {
+        text-align: start;
+        font-size: 1.4em;
     }
 
     .about__cta {
         margin-top: -60px;
     }
-
-    .header__countdown, .header__title {
-        flex-basis: unset;
-    }
 }
 
-/* Breakpoint Extra Extrs Large */
+/* Breakpoint Extra Extra Large */
 @media screen and (min-width: 1200px) {
+    .about__content {
+        margin-bottom: 60px;
+    }
+
     .about__cta {
         background-size: contain;
         margin-top: -180px;
