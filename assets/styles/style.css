@@ -493,9 +493,8 @@ input::placeholder {
 
 .about__cta-title {
     color: var(--color-pink-button);
-    text-shadow: -2px 2px 0 var(--color-black);
+    text-shadow: -1px 1px 0 var(--color-black);
     text-transform: uppercase;
-    -webkit-text-stroke: 0.5px var(--color-black);
 }
 
 .about__cta-text {
@@ -565,6 +564,7 @@ input::placeholder {
 
     .about__cta-title {
         font-size: 1.6em;
+        text-shadow: -3px 3px 0 var(--color-black);
     }
 }
 
